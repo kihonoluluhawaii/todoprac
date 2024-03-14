@@ -1,0 +1,183 @@
+/* CSS Resets */
+body,
+p,
+ul {
+  margin: unset;
+  padding: unset;
+}
+
+h1,
+h2 {
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  vertical-align: top;
+}
+
+button {
+  border: none;
+}
+
+/* Typography */
+:root {
+  font-family: "Dongle", sans-serif;
+}
+
+/* Variable */
+:root {
+  --color-white: #fff;
+  --color-gray-right: darkgray;
+  --color-gray: #858282;
+  --color-primary: #709bdb;
+  --color-primary-20: dodgerblue;
+  --color-black: #000;
+}
+/* Components */
+body {
+  background-color: var(--color-gray);
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  padding: 50px 10px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 600px;
+  min-height: 500px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  position: relative;
+}
+
+.header {
+  padding: 30px 20px 10px;
+  flex-shrink: 0;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 4px ridge var(--color-primary);
+
+  & .date {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  & .week {
+    font-size: 30px;
+    color: var(--color-gray-right);
+    margin-bottom: 20px;
+  }
+
+  & .lastwork {
+    font-size: 20px;
+    color: var(--color-primary);
+    margin: auto 0 0px;
+  }
+}
+
+.scrollBar::-webkit-scrollbar {
+  width: 4px;
+  height: 20px;
+  background-color: var(--color-white);
+  border-radius: 20px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
+
+.main {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+
+  & .todolist {
+    overflow-y: auto;
+    max-height: 300px;
+    height: 100%;
+    padding: 0 20px 20px;
+    color: var(--color-black);
+
+    & a {
+      display: inline-block;
+      font-size: 1.6rem;
+      color: var(--color-gray-right);
+    }
+
+    & a:hover {
+      transform: scale(1.1);
+    }
+
+    & img {
+      width: 20px;
+      vertical-align: middle;
+      margin: 4px 10px 10px 0;
+    }
+    & .is-active {
+      padding: 20px;
+      color: var(--color-primary);
+
+      & a {
+        color: var(--color-primary);
+      }
+    }
+
+    & .todoitem {
+      padding: 6px 0;
+    }
+  }
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  bottom: -24px;
+  transform: translate(-50%);
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  cursor: pointer;
+
+  & img {
+    width: 20px;
+  }
+
+  & :hover {
+    transform: scale(1.2);
+    transition: all 0.2s;
+  }
+}
+
+.button:hover {
+  background-color: var(--color-primary-20);
+}
